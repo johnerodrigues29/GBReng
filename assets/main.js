@@ -1,13 +1,35 @@
 'use strict';
 document.documentElement.classList.add('js');
 const toggle = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('#navigation');
-function closeMenu() { navigation.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
-toggle.addEventListener('click', () => { const open = navigation.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
-navigation.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-document.addEventListener('keydown', e => { if(e.key === 'Escape' && navigation.classList.contains('open')) { closeMenu(); toggle.focus(); } });
-document.addEventListener('click', e => { if (!e.target.closest('.header')) closeMenu(); });
-window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+const panel = document.querySelector('#mobile-menu');
+const closeButton = panel.querySelector('.menu-close');
+function closeMenu(restoreFocus = true) {
+  if (!panel.open) return;
+  panel.close();
+  document.body.classList.remove('nav-open');
+  toggle.setAttribute('aria-expanded', 'false');
+  if (restoreFocus) toggle.focus({preventScroll: true});
+}
+toggle.addEventListener('click', () => {
+  panel.showModal();
+  document.body.classList.add('nav-open');
+  toggle.setAttribute('aria-expanded', 'true');
+});
+closeButton.addEventListener('click', () => closeMenu());
+panel.addEventListener('cancel', e => { e.preventDefault(); closeMenu(); });
+panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  closeMenu(false);
+  const href = a.getAttribute('href');
+  if (href.startsWith('#')) {
+    const target = document.querySelector(href);
+    if (target) {
+      target.setAttribute('tabindex', '-1');
+      target.focus({preventScroll: true});
+      target.addEventListener('blur', () => target.removeAttribute('tabindex'), {once:true});
+    }
+  }
+}));
+window.matchMedia('(min-width: 761px)').addEventListener('change', e => { if(e.matches) closeMenu(false); });
 document.querySelector('#year').textContent = new Date().getFullYear();
 const config = window.GBR_CONFIG || {};
 const links = document.querySelector('#contact-links');
