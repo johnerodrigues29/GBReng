@@ -4,6 +4,6 @@
    O e-mail não é criado automaticamente pelo registro do domínio. */
 window.GBR_CONFIG = {
   whatsapp: '',
-  email: '',
+  email: 'contato@gbreng.com.br',
   mensagem: 'Olá! Conheci a GBR e gostaria de conversar sobre consultoria para minha empresa.'
 };
