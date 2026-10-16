@@ -23,3 +23,10 @@ Allow: / em robots.txt. Confirmar a razão social/CNPJ do rodapé.
 
 Verificações: arquivos, links, âncoras, estrutura HTML e sintaxe JavaScript.
 Sem validação visual em navegador neste ambiente.
+
+REVISÃO DE MARCA E FONTES
+Nome no menu e rodapé: Engenharia e Gestão Empresarial. Logo original
+enquadrada sobre azul. Favicon quadrado sem deformação. Imagem principal
+somente com o painel azul e a faixa dourada, sem a área branca de contatos.
+Manrope local em WOFF2, pesos 400/500/600/700, subconjunto latino,
+font-display: swap. Licença OFL incluída em assets/fonts.
