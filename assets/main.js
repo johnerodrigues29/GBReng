@@ -40,3 +40,14 @@ if (/^55\d{10,11}$/.test(phone)) addLink('Conversar pelo WhatsApp ↗', 'https:/
 const email = String(config.email || '').trim();
 if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) addLink(email + ' ↗', 'mailto:' + email, false);
 if (links.children.length) document.querySelector('#contact-pending').hidden = true;
+
+// Indica a seção visível na navegação de desktop.
+if ('IntersectionObserver' in window) {
+ const navLinks = [...document.querySelectorAll('#navigation a[href^="#"]')];
+ const observer = new IntersectionObserver(entries => {
+  const current = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
+  if (!current) return;
+  navLinks.forEach(a => { if(a.hash === '#' + current.target.id) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current'); });
+ }, {rootMargin:'-15% 0px -55% 0px',threshold:0});
+ document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
+}

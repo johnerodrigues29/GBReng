@@ -2,7 +2,9 @@ GBR — VERSÃO COM MATERIAL DO CLIENTE | 16/10/2026
 
 Conteúdo atualizado com base na apresentação e no cartão enviados.
 Marca comercial: GBR Gestão Industrial. Razão social mantida no rodapé.
-Logo original preservada no JPEG, enquadrada por CSS (sem redesenho).
+Logo preparada em PNG transparente a partir do cartão com ferramenta de imagem.
+Cartão original integral, sem cortes, com opção de ampliar.
+Cabeçalho compacto: 72px desktop e 66px mobile.
 Guilherme Bruschi, mais de 30 anos de experiência no Brasil e exterior,
 conforme a apresentação. Sem incluir clientes ou resultados não fornecidos.
 
