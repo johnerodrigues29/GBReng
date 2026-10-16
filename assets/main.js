@@ -33,6 +33,7 @@ window.matchMedia('(min-width: 761px)').addEventListener('change', e => { if(e.m
 document.querySelector('#year').textContent = new Date().getFullYear();
 const config = window.GBR_CONFIG || {};
 const links = document.querySelector('#contact-links');
+links.replaceChildren();
 function addLink(text, href, primary) { const a = document.createElement('a'); a.textContent = text; a.href = href; a.className = primary ? 'button primary' : 'text-link'; links.append(a); }
 const phone = String(config.whatsapp || '').replace(/\D/g, '');
 if (/^55\d{10,11}$/.test(phone)) addLink('Conversar pelo WhatsApp ↗', 'https://wa.me/' + phone + '?text=' + encodeURIComponent(config.mensagem || ''), true);

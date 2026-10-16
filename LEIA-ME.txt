@@ -1,64 +1,23 @@
-GBR — PRIMEIRA VERSÃO DO SITE | 15/10/2026
-Domínio: https://gbreng.com.br/
+GBR — VERSÃO COM MATERIAL DO CLIENTE | 16/10/2026
 
-ENTREGA
-Site estático em HTML, CSS e JavaScript, sem compilação, bibliotecas,
-fontes externas, cookies ou rastreadores. Marca tipográfica provisória
-GBR e ilustração vetorial original; substituir pela identidade do cartão
-quando recebida. Abre diretamente em index.html e em subpastas do XAMPP.
+Conteúdo atualizado com base na apresentação e no cartão enviados.
+Marca comercial: GBR Gestão Industrial. Razão social mantida no rodapé.
+Logo original preservada no JPEG, enquadrada por CSS (sem redesenho).
+Guilherme Bruschi, mais de 30 anos de experiência no Brasil e exterior,
+conforme a apresentação. Sem incluir clientes ou resultados não fornecidos.
 
-ANTES DE PUBLICAR COMO VERSÃO DEFINITIVA
-1. Aprovar os textos e a abordagem sugerida com o cliente. O conteúdo
-   editorial foi elaborado a partir da transcrição; não representa
-   metodologia contratada, resultados ou credenciais comprovadas.
-2. Receber WhatsApp comercial, e-mail, logo/cartão e textos finais.
-3. Editar assets/config.js para ativar links de WhatsApp e e-mail.
-   Nenhum formulário envia dados. Contatos vazios exibem mensagem honesta.
-   Registrar o domínio não cria uma caixa de e-mail.
-4. Confirmar CNPJ e razão social no rodapé com o cartão CNPJ do cliente.
-5. Remover a meta robots noindex, nofollow do index.html.
-6. Em robots.txt, substituir Disallow: / por Allow: /.
-   A prévia está bloqueada para indexação por ser conteúdo em aprovação.
-   Isso NÃO é proteção por senha; quem tiver a URL poderá acessar.
+WhatsApp: +55 51 99648-2699
+E-mail principal: guilherme.bruschi@gbreng.com.br
+Outros e-mails: contato@gbreng.com.br e guilherme.bruschi1569@gmail.com
+Links de contato funcionam também sem JavaScript.
 
-PUBLICAÇÃO NO GITHUB + CLOUDFLARE PAGES
-Extraia este ZIP e coloque index.html e assets/ na raiz do repositório.
-Projeto estático: sem framework e sem comando de build; diretório de
-saída é a raiz dos arquivos estáticos. Vincule gbreng.com.br ao projeto
-Pages pelo painel de domínio personalizado e siga os registros DNS
-indicados pelo próprio painel. Não altere registros MX/TXT de e-mail
-caso já existam. As configurações do painel podem mudar.
-Este pacote NÃO foi publicado nem conectado ao domínio automaticamente.
+Site estático: publicar o conteúdo deste ZIP na raiz do projeto existente.
+Não há build nem dependências externas. Abre em index.html ou no XAMPP.
+A publicação e os serviços de e-mail não são configurados por este ZIP.
 
-ARQUIVOS
-index.html: estrutura e textos, editáveis diretamente.
-assets/styles.css: estilos, cores e regras responsivas.
-assets/config.js: contatos comerciais.
-assets/main.js: menu mobile e ativação dos contatos.
-assets/favicon.svg: ícone provisório.
-robots.txt / sitemap.xml: preparação de indexação.
-_headers: cabeçalhos para Cloudflare Pages.
+Mantido noindex por se tratar de revisão do cliente. Após aprovação,
+remover a meta robots noindex de index.html e trocar Disallow: / por
+Allow: / em robots.txt. Confirmar a razão social/CNPJ do rodapé.
 
-PESQUISA CADASTRAL (consultada em 15/10/2026)
-Empresa localizada em diretórios: GBR Engenharia e Gestão Empresarial
-Ltda., CNPJ 21.268.348/0001-34, Porto Alegre/RS, abertura 21/10/2014.
-Atividade principal: serviços de engenharia, CNAE 7112-0/00.
-Atividade secundária: consultoria em gestão empresarial, CNAE 7020-4/00.
-Fontes secundárias; confirmar os dados com o cliente/cartão CNPJ:
-https://www.econodata.com.br/consulta-empresa/21268348000134-gbr-engenharia-e-gestao-empresarial-ltda
-https://empresas.serasaexperian.com.br/consulta-gratis/GBR-ENGENHARIA-E-GESTAO-EMPRESARIAL-LTDA-ME-21268348000134
-
-O site usa apenas razão social, CNPJ e cidade. Não publicamos endereço
-residencial, telefone ou e-mail de diretórios: podem ser da contabilidade.
-Não foram inventados projetos, clientes, depoimentos, equipe, certificados,
-registro CREA, anos de experiência profissional ou resultados numéricos.
-
-VALIDAÇÃO
-Verificação estática de links internos, arquivos locais, estrutura HTML,
-SVG e sintaxe JavaScript. Layout com regras para desktop e celular,
-menu acessível, foco visível e respeito à preferência de movimento reduzido.
-Não houve teste visual em navegador neste ambiente.
-
-ATUALIZAÇÃO: menu mobile em tela cheia seguindo o GuiaVolt, com botão
-de fechar, links grandes, rolagem de fundo bloqueada e diálogo nativo
-para foco de teclado. E-mail comercial incluído.
+Verificações: arquivos, links, âncoras, estrutura HTML e sintaxe JavaScript.
+Sem validação visual em navegador neste ambiente.

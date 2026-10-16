@@ -3,7 +3,7 @@
    Exemplo de formato: 55DDDNÚMERO (não use um número fictício).
    O e-mail não é criado automaticamente pelo registro do domínio. */
 window.GBR_CONFIG = {
-  whatsapp: '',
-  email: 'contato@gbreng.com.br',
+  whatsapp: '5551996482699',
+  email: 'guilherme.bruschi@gbreng.com.br',
   mensagem: 'Olá! Conheci a GBR e gostaria de conversar sobre consultoria para minha empresa.'
 };
