@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /
-# Prévia de layout. Após aprovação, trocar Disallow: / por Allow: /
-# e remover noindex do index.html.
+Allow: /
+
 Sitemap: https://gbreng.com.br/sitemap.xml
