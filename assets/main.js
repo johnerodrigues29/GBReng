@@ -51,3 +51,36 @@ if ('IntersectionObserver' in window) {
  }, {rootMargin:'-15% 0px -55% 0px',threshold:0});
  document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
 }
+
+// Ampliação do QR na própria página, com foco e retorno ao acionador.
+const qrDialog = document.querySelector('#qr-dialog');
+let qrTrigger;
+let qrScrollY = 0;
+let qrPreviousStyle = null;
+function closeQR() { if (qrDialog.open) qrDialog.close(); }
+document.querySelectorAll('.vcard-block a[href="assets/qr-vcard-gbr.png"]').forEach(link => {
+ link.removeAttribute('target');
+ link.setAttribute('aria-haspopup', 'dialog');
+ link.setAttribute('aria-controls', 'qr-dialog');
+ link.addEventListener('click', event => {
+  event.preventDefault(); qrTrigger = link; qrScrollY = window.scrollY;
+  qrPreviousStyle = document.body.getAttribute('style');
+  document.body.style.position = 'fixed';
+  document.body.style.top = '-' + qrScrollY + 'px';
+  document.body.style.width = '100%';
+  qrDialog.showModal();
+ });
+});
+qrDialog.querySelector('.qr-close').addEventListener('click', closeQR);
+qrDialog.addEventListener('click', event => {
+ const rect = qrDialog.getBoundingClientRect();
+ if(event.target === qrDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) closeQR();
+});
+qrDialog.addEventListener('close', () => {
+ if (qrPreviousStyle === null) document.body.removeAttribute('style'); else document.body.setAttribute('style', qrPreviousStyle);
+ const previousBehavior = document.documentElement.style.scrollBehavior;
+ document.documentElement.style.scrollBehavior = 'auto';
+ window.scrollTo(0, qrScrollY);
+ document.documentElement.style.scrollBehavior = previousBehavior;
+ qrTrigger?.focus({preventScroll:true});
+});
