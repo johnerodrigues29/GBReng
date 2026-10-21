@@ -60,5 +60,5 @@ h1 em,h2 em{font-family:"DM Serif Display",Georgia,serif;font-style:italic;font-
 
 .vcard-download{display:flex;width:fit-content}.vcard-block{grid-template-columns:180px minmax(0,1fr)}@media(max-width:1050px){.vcard-block{grid-template-columns:1fr}.vcard-qr{width:200px;max-width:100%}}
 
-/* Crédito discreto de desenvolvimento. */
-.developer-credit{padding-bottom:20px}.developer-credit p{margin:0;font-size:11px;line-height:1.6;color:var(--text)}.developer-credit a{color:inherit;text-decoration:underline;text-decoration-color:#a4afbb;text-underline-offset:3px}.developer-credit a:hover{color:var(--ink)}.developer-credit a:focus-visible{outline:2px solid var(--copper);outline-offset:4px}
+/* Crédito alinhado aos dados do rodapé. */
+.footer-bottom .developer-credit{font-size:10px;color:var(--text)}.developer-credit a{color:inherit;text-decoration:none}.developer-credit a:hover{text-decoration:underline;text-underline-offset:3px}.developer-credit a:focus-visible{outline:2px solid var(--copper);outline-offset:4px}
