@@ -34,11 +34,11 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 const config = window.GBR_CONFIG || {};
 const links = document.querySelector('#contact-links');
 if (config.whatsapp || config.email) links.replaceChildren();
-function addLink(text, href, primary) { const a = document.createElement('a'); a.textContent = text; a.href = href; a.className = primary ? 'button primary' : 'text-link'; links.append(a); }
+function addLink(text, href, primary) { const a = document.createElement('a'); a.textContent = text + ' '; a.insertAdjacentHTML('beforeend', '<svg class="ui-icon " width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg>'); a.href = href; a.className = primary ? 'button primary' : 'text-link'; links.append(a); }
 const phone = String(config.whatsapp || '').replace(/\D/g, '');
-if (/^55\d{10,11}$/.test(phone)) addLink('Conversar pelo WhatsApp ↗', 'https://wa.me/' + phone + '?text=' + encodeURIComponent(config.mensagem || ''), true);
+if (/^55\d{10,11}$/.test(phone)) addLink('Conversar pelo WhatsApp', 'https://wa.me/' + phone + '?text=' + encodeURIComponent(config.mensagem || ''), true);
 const email = String(config.email || '').trim();
-if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) addLink(email + ' ↗', 'mailto:' + email, false);
+if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) addLink(email, 'mailto:' + email, false);
 if (links.children.length) document.querySelector('#contact-pending').hidden = true;
 
 // Indica a seção visível na navegação de desktop.
